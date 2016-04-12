@@ -33,6 +33,7 @@ ejson@1.0.10
 email@1.0.11
 es5-shim@4.5.9
 fastclick@1.0.10
+fourseven:scss@3.4.2
 geojson-utils@1.0.7
 hot-code-push@1.0.3
 html-tools@1.0.8
@@ -72,13 +73,14 @@ reactive-var@1.0.8
 reload@1.1.7
 retry@1.0.6
 routepolicy@1.0.9
+seba:minifiers-autoprefixer@1.0.1
+semantic:ui-css@2.1.2
 service-configuration@1.0.8
 session@1.1.4
 sha@1.0.6
 spacebars@1.0.10
 spacebars-compiler@1.0.10
 srp@1.0.7
-standard-minifier-css@1.0.5
 standard-minifier-js@1.0.5
 static-html@1.0.6
 templating@1.1.8

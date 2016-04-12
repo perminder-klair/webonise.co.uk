@@ -1,0 +1,27 @@
+{
+  "servers": [
+    {
+      "host": "188.226.179.18",
+      "username": "root",
+      "pem": "~/.ssh/id_rsa"
+    }
+  ],
+
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion": "0.10.40",
+  "setupPhantom": true,
+
+  "enableUploadProgressBar": true,
+
+  "appName": "smooze",
+  "app": "../../",
+
+  "env": {
+    "ROOT_URL": "http://www.smooze.me",
+    "PORT": "1992",
+    "MONGO_URL": ""
+  },
+
+  "deployCheckWaitTime": 15
+}

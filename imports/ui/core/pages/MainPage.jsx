@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Tasks } from '../../api/tasks/tasks.js';
+import { Tasks } from '../../../api/tasks/tasks.js';
 
-import Task from './../Task.jsx';
-import AccountsUIWrapper from './../AccountsUIWrapper.jsx';
+import Task from '../components/Task.jsx';
+import AccountsUIWrapper from '../layouts/AccountsUIWrapper.jsx';
 
 // App component - represents the whole app
-class MainContainer extends Component {
+class MainPage extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
@@ -30,7 +30,7 @@ class MainContainer extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="ui container">
                 <header>
                     <h1>Todo List</h1>
                     <AccountsUIWrapper />
@@ -51,7 +51,7 @@ class MainContainer extends Component {
     }
 }
 
-MainContainer.propTypes = {
+MainPage.propTypes = {
     tasks: PropTypes.array.isRequired,
 };
 
@@ -62,4 +62,4 @@ export default createContainer(() => {
         tasks: Tasks.find({}).fetch(),
         currentUser: Meteor.user()
     };
-}, MainContainer);
+}, MainPage);

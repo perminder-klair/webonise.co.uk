@@ -16,15 +16,18 @@ import React, { Component } from 'react';
 //}
 //
 
-const MainLayout = ({content}) => (
+const App = ({content}) => (
     <div>
-        <header>
-            This is our header
-        </header>
-        <main>
-            {content}
-        </main>
+        <div className="ui fixed inverted menu">
+            <div className="ui container">
+                <a href="#" className="header item">
+                    Smooze
+                </a>
+                <a href="#" className="item">Home</a>
+            </div>
+        </div>
+        {content}
     </div>
 );
 
-export default MainLayout;
+export default App;
