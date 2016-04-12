@@ -1,1 +1,1 @@
-import '../../api/tasks/methods.js';
+import '../../api/links/methods.js';

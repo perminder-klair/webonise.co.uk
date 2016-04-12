@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Tasks } from '../../../api/tasks/tasks.js';
+import { Links } from '../../../api/links/links.js';
 
-import Task from '../components/Task.jsx';
+import Link from '../../links/components/Link.jsx';
 import AccountsUIWrapper from '../layouts/AccountsUIWrapper.jsx';
 
 // App component - represents the whole app
@@ -16,15 +16,15 @@ class MainPage extends Component {
         // Find the text field via the React ref
         const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
-        Meteor.call('tasks.insert', text);
+        Meteor.call('links.insert', text);
 
         // Clear form
         ReactDOM.findDOMNode(this.refs.textInput).value = '';
     }
 
-    renderTasks() {
-        return this.props.tasks.map((task) => (
-            <Task key={task._id} task={task} />
+    renderLinks() {
+        return this.props.links.map((link) => (
+            <Link key={link._id} link={link} />
         ));
     }
 
@@ -32,19 +32,19 @@ class MainPage extends Component {
         return (
             <div className="ui container">
                 <header>
-                    <h1>Todo List</h1>
+                    <h1>Links List</h1>
                     <AccountsUIWrapper />
-                    <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                    <form className="new-link" onSubmit={this.handleSubmit.bind(this)} >
                         <input
                             type="text"
                             ref="textInput"
-                            placeholder="Type to add new tasks"
+                            placeholder="Type link URL"
                         />
                     </form>
                 </header>
 
                 <ul>
-                    {this.renderTasks()}
+                    {this.renderLinks()}
                 </ul>
             </div>
         );
@@ -52,14 +52,14 @@ class MainPage extends Component {
 }
 
 MainPage.propTypes = {
-    tasks: PropTypes.array.isRequired,
+    links: PropTypes.array.isRequired
 };
 
 export default createContainer(() => {
-    Meteor.subscribe('tasks');
+    Meteor.subscribe('links');
 
     return {
-        tasks: Tasks.find({}).fetch(),
+        links: Links.find({}).fetch(),
         currentUser: Meteor.user()
     };
 }, MainPage);

@@ -1,35 +1,38 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { Tasks } from './tasks.js';
+import { Links } from './links.js';
 
 Meteor.methods({
-    'tasks.insert'(text) {
-        check(text, String);
+    'links.insert'(url) {
+        check(url, String);
 
         // Make sure the user is logged in before inserting a task
         if (! Meteor.userId()) {
             throw new Meteor.Error('not-authorized');
         }
 
-        Tasks.insert({
-            text,
+        Links.insert({
+            url,
             createdAt: new Date(),
             owner: Meteor.userId(),
-            username: Meteor.user().username,
+            username: Meteor.user().username
         });
     },
-    'tasks.remove'(taskId) {
-        check(taskId, String);
+    'links.remove'(linkId) {
+        check(linkId, String);
 
-        Tasks.remove(taskId);
+        Links.remove(linkId);
     },
-    'tasks.setChecked'(taskId, setChecked) {
+    //todo
+    'links.setChecked'(taskId, setChecked) {
         check(taskId, String);
         check(setChecked, Boolean);
 
-        Tasks.update(taskId, { $set: { checked: setChecked } });
+        Links.update(taskId, { $set: { checked: setChecked } });
     },
-    'tasks.setPrivate'(taskId, setToPrivate) {
+
+    //todo
+    'links.setPrivate'(taskId, setToPrivate) {
         check(taskId, String);
         check(setToPrivate, Boolean);
 
@@ -40,6 +43,6 @@ Meteor.methods({
             throw new Meteor.Error('not-authorized');
         }
 
-        Tasks.update(taskId, { $set: { private: setToPrivate } });
+        Links.update(taskId, { $set: { private: setToPrivate } });
     },
 });
