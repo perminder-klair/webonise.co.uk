@@ -17,8 +17,19 @@ class FlickrCollection extends Mongo.Collection {
 
 export const Flickr = new FlickrCollection('flickr');
 
-//TODO!!!!
 Flickr.schema = new SimpleSchema({
+    url: {
+        type: String
+    },
+    flickr_id: {
+        type: String
+    },
+    datetaken: {
+        type: String
+    },
+    dateupload: {
+        type: String
+    },
     createdAt: {
         type: Date,
         denyUpdate: true

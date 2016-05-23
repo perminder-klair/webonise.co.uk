@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 class Header extends Component {
     componentDidMount() {
@@ -23,13 +24,13 @@ class Header extends Component {
                         <ul className="hide-on-med-and-down">
                             <li><a href="#">about me</a></li>
                             <li><a href="#">resume</a></li>
-                            <li><a href="#">contact</a></li>
+                            <li><a href={FlowRouter.path('contact')}>contact</a></li>
                             <li><a href="#">resources</a></li>
                         </ul>
                         <ul className="side-nav" id="mobile-demo">
                             <li><a href="#">about me</a></li>
                             <li><a href="#">resume</a></li>
-                            <li><a href="#">contact</a></li>
+                            <li><a href={FlowRouter.path('contact')}>contact</a></li>
                             <li><a href="#">resources</a></li>
                         </ul>
                     </div>

@@ -4,13 +4,31 @@ import { mount } from 'react-mounter';
 
 // route components
 import App from './layouts/App.jsx';
-import MainPage from './pages/MainPage.jsx';
+import MainContainer from './containers/MainContainer.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+
+FlowRouter.notFound = {
+    action: function() {
+        mount(App, {
+            content: <NotFoundPage />
+        });
+    }
+};
 
 FlowRouter.route('/', {
     name: 'main',
     action() {
         mount(App, {
-            content: <MainPage/>
+            content: <MainContainer/>
+        });
+    }
+});
+
+FlowRouter.route('/not-found', {
+    name: 'notFound',
+    action: function() {
+        mount(App, {
+            content: <NotFoundPage />
         });
     }
 });

@@ -20,52 +20,41 @@ export const Github = new GithubCollection('github');
 Github.schema = new SimpleSchema({
     gitId: {
         type: String,
-        label: "Github ID",
         max: 200
     },
     name: {
-        type: String,
-        label: "Name"
+        type: String
     },
     full_name: {
-        type: String,
-        label: "Full Name"
+        type: String
     },
     html_url: {
-        type: String,
-        label: "Html Url"
+        type: String
     },
     git_url: {
-        type: String,
-        label: "Git Url"
+        type: String
     },
     default_branch: {
-        type: String,
-        label: "Default Branch"
+        type: String
     },
     description: {
         type: String,
-        label: "Description",
         optional: true
     },
     stargazers_count: {
         type: Number,
-        label: "Stargazers Count",
         min: 0
     },
     watchers_count: {
         type: Number,
-        label: "Watchers Count",
         min: 0
     },
     forks_count: {
         type: Number,
-        label: "Forks Count",
         min: 0
     },
     open_issues_count: {
         type: Number,
-        label: "Open Issues Count",
         min: 0
     },
     createdAtGit: {

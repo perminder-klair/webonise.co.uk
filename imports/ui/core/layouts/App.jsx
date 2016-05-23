@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Header from '../containers/Header.jsx';
-import Footer from '../containers/Footer.jsx';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 
 const App = ({content}) => (
     <div>

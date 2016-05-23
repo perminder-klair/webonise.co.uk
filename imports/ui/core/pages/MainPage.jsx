@@ -1,18 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
+import React, { Component, PropTypes } from 'react';
 
-import { Tweets } from '../../../api/tweets/tweets.js';
-import { Github } from '../../../api/github/github.js';
-import { Instagram } from '../../../api/instagram/instagram.js';
-import { Diet } from '../../../api/diet/diet.js';
-import { Flickr } from '../../../api/flickr/flickr.js';
-
-//import Link from '../../links/components/Link.jsx';
-
-import WorkProcess from '../containers/WorkProcess.jsx';
-import FunFacts from '../containers/FunFacts.jsx';
+import WorkProcess from '../components/WorkProcess.jsx';
+import FunFacts from '../components/FunFacts.jsx';
 
 class MainPage extends Component {
     //handleSubmit(event) {
@@ -186,19 +176,4 @@ MainPage.propTypes = {
     flickr: PropTypes.array.isRequired
 };
 
-export default createContainer(() => {
-    //Meteor.subscribe('links');
-    Meteor.subscribe('latestTweet');
-    Meteor.subscribe('getGitHub');
-    Meteor.subscribe('getInstagram');
-    Meteor.subscribe('todayDiet');
-    Meteor.subscribe('getFlickr');
-
-    return {
-        tweets: Tweets.find({}).fetch(),
-        github: Github.find({}).fetch(),
-        instagram: Instagram.find({}).fetch(),
-        diet: Diet.find({}).fetch(),
-        flickr: Flickr.find({}).fetch()
-    };
-}, MainPage);
+export default MainPage;

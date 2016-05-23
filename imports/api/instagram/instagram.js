@@ -17,20 +17,25 @@ class InstagramCollection extends Mongo.Collection {
 
 export const Instagram = new InstagramCollection('instagram');
 
-//TODO!!!!
 Instagram.schema = new SimpleSchema({
-    twid: {
-        type: String,
-        label: "Twitter ID",
-        max: 200
+    instaId: {
+        type: String
     },
-    body: {
-        type: String,
-        label: "Body"
+    created_time: {
+        type: String
     },
-    date: {
-        type: Date,
-        label: "Date"
+    link: {
+        type: String
+    },
+    images: {
+        type: [Object],
+        optional: true,
+        blackbox: true
+    },
+    caption: {
+        type: Object,
+        optional: true,
+        blackbox: true
     },
     createdAt: {
         type: Date,

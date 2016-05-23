@@ -20,16 +20,13 @@ export const Tweets = new TweetsCollection('tweets');
 Tweets.schema = new SimpleSchema({
     twid: {
         type: String,
-        label: "Twitter ID",
         max: 200
     },
     body: {
-        type: String,
-        label: "Body"
+        type: String
     },
     date: {
-        type: Date,
-        label: "Date"
+        type: Date
     },
     createdAt: {
         type: Date,
