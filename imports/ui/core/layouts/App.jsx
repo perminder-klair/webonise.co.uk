@@ -1,32 +1,13 @@
 import React, { Component } from 'react';
-//
-//export default class MainLayout extends Component {
-//    render() {
-//        return (
-//            <div>
-//                <header>
-//                    This is our header
-//                </header>
-//                <main>
-//                    {this.props.content}
-//                </main>
-//            </div>
-//        );
-//    }
-//}
-//
+
+import Header from '../containers/Header.jsx';
+import Footer from '../containers/Footer.jsx';
 
 const App = ({content}) => (
     <div>
-        <div className="ui fixed inverted menu">
-            <div className="ui container">
-                <a href="#" className="header item">
-                    Meteor Starter
-                </a>
-                <a href="#" className="item">Home</a>
-            </div>
-        </div>
+        <Header />
         {content}
+        <Footer />
     </div>
 );
 

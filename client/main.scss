@@ -1,6 +1,15 @@
 $default-font: 'Raleway', sans-serif;
+
+$color-white: #ffffff;
+$color-blue-ribbon: #304FFE;
+$color-wild-strawberry: #ff4081;
+
 $background-color: #f3f3f3;
-$default-font-color: #5d646c;
+$default-font-color: #212121;
+$default-font-active-color: $color-wild-strawberry;
+$border-color: #dddddd;
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 @import "../imports/ui/core/core";
+@import "../imports/ui/core/containers/header";
+@import "../imports/ui/core/containers/footer";

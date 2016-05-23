@@ -47,6 +47,7 @@ less@2.6.0
 livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
+materialize:materialize@0.97.5
 mdg:validation-error@0.5.1
 meteor@1.1.14
 meteor-base@1.0.4
@@ -59,6 +60,7 @@ modules@0.6.1
 modules-runtime@0.6.3
 mongo@1.1.7
 mongo-id@1.0.4
+natestrauser:font-awesome@4.6.1
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43
 observe-sequence@1.0.11

@@ -10,3 +10,73 @@ body {
   height: 100%;
   min-height: 100vh;
 }
+
+a {
+  color: $default-font-active-color;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 1em;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: left;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-bottom: 4px solid $border-color;
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    padding-right: 1.4em;
+    background: $color-white;
+  }
+  i {
+    padding: 6px;
+    border-radius: 50%;
+    color: $border-color;
+    border: 4px solid $border-color;
+    margin-right: 16px;
+    font-size: 24px;
+  }
+}
+
+.card {
+  a {
+    margin: 0;
+    color: #c5cae9;
+  }
+  .card-content {
+    p {
+      font-weight: 200;
+    }
+  }
+}
+
+.input-field {
+  label {
+    color: $color-blue-ribbon;
+  }
+  input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=date]:focus, textarea:focus {
+    border-bottom: 1px solid $color-blue-ribbon;
+    -webkit-box-shadow: 0 1px 0 0 $color-blue-ribbon;
+    -moz-box-shadow: 0 1px 0 0 $color-blue-ribbon;
+    box-shadow: 0 1px 0 0 $color-blue-ribbon;
+  }
+  input[type=text]:focus + label, input[type=password]:focus + label, input[type=email]:focus + label, input[type=date]:focus + label, textarea:focus + label {
+    color: $color-blue-ribbon;
+  }
+}
+
+.loader-container {
+  text-align: center;
+  padding: 10% 0 !important;
+}
+
+.fade-in {
+  display: none;
+}

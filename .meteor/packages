@@ -28,3 +28,5 @@ static-html
 semantic:ui-css
 seba:minifiers-autoprefixer
 fourseven:scss
+materialize:materialize
+natestrauser:font-awesome
