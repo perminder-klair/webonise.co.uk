@@ -1,10 +1,10 @@
-# Smooze.me
+# Meteor 1.3 Starting Point
 
 ### Running the app
 
 ```bash
 npm install
-meteor
+meteor --settings settings.json
 ```
 
 ### Scripts

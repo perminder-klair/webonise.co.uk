@@ -21,7 +21,7 @@ const App = ({content}) => (
         <div className="ui fixed inverted menu">
             <div className="ui container">
                 <a href="#" className="header item">
-                    Smooze
+                    Meteor Starter
                 </a>
                 <a href="#" className="item">Home</a>
             </div>
