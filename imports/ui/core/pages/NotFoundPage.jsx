@@ -7,7 +7,7 @@ const NotFoundPage = () => (
             <div className="row">
                 <div className="col s12 m12">
                     <p>
-                        Seems like this site doesn't exist<br />
+                        Seems like this page doesn't exist<br />
                         <a href={FlowRouter.path('main')}>Go to home</a>
                     </p>
                 </div>

@@ -22,14 +22,14 @@ class Header extends Component {
                             <i className="mdi-navigation-menu"/>
                         </a>
                         <ul className="hide-on-med-and-down">
-                            <li><a href="#">about me</a></li>
-                            <li><a href="#">resume</a></li>
+                            <li><a href={FlowRouter.path('main')}>about me</a></li>
+                            <li><a href={FlowRouter.path('resume')}>resume</a></li>
                             <li><a href={FlowRouter.path('contact')}>contact</a></li>
                             <li><a href="#">resources</a></li>
                         </ul>
                         <ul className="side-nav" id="mobile-demo">
-                            <li><a href="#">about me</a></li>
-                            <li><a href="#">resume</a></li>
+                            <li><a href={FlowRouter.path('main')}>about me</a></li>
+                            <li><a href={FlowRouter.path('resume')}>resume</a></li>
                             <li><a href={FlowRouter.path('contact')}>contact</a></li>
                             <li><a href="#">resources</a></li>
                         </ul>
