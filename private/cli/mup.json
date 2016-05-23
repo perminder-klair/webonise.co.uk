@@ -14,12 +14,12 @@
 
   "enableUploadProgressBar": true,
 
-  "appName": "smooze",
+  "appName": "webonise",
   "app": "../../",
 
   "env": {
-    "ROOT_URL": "http://www.smooze.me",
-    "PORT": "1992",
+    "ROOT_URL": "http://www.webonise.co.uk",
+    "PORT": "1991",
     "MONGO_URL": ""
   },
 
