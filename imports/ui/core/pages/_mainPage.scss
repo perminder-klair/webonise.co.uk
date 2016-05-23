@@ -1,0 +1,81 @@
+#index-banner {
+  p {
+    color: #212121;
+  }
+}
+
+.featured-media {
+  .card {
+    text-align: center;
+    min-height: 230px;
+    .card-title {
+      font-size: 24px;
+      line-height: 24px;
+      a {
+        color: #ffffff;
+      }
+    }
+    .card-action {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .updated-on {
+      color: #CCCCCC;
+      font-weight: 300;
+      font-size: 13px;
+    }
+  }
+  .btn-large {
+    i {
+      line-height: 16px;
+    }
+    span {
+      font-size: 18px;
+    }
+  }
+}
+
+.processes-container {
+  color: #212121;
+  .card.small {
+    height: 420px;
+    .card-title {
+      font-weight: 400;
+    }
+    .card-content {
+      height: 255px;
+      font-size: 16px;
+      font-weight: 300;
+      p {
+        font-weight: 300 !important;
+      }
+    }
+  }
+}
+
+.fun-facts {
+  text-align: center;
+  .card {
+    i {
+      display: block;
+      font-size: 58px;
+    }
+  }
+}
+
+span.ago {
+  display: block;
+  color: #777777;
+  font-size: 12px;
+}
+i.twitter {
+  display: block;
+  margin-top: -36px;
+  margin-bottom: 12px;
+  font-size: 40px;
+}
+
+.tweet-card {
+  min-height: 160px;
+}

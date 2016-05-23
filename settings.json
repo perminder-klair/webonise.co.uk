@@ -1,1 +1,15 @@
-{}
+{
+  "public": {
+    "site_name": "Webonise.co.uk",
+    "person_name": "Parminder Klair",
+    "tag_line": "senior web developer",
+    "social": {
+      "twitter": "https://www.twitter.com/pinku1",
+      "facebook": "https://www.facebook.com/klair.us",
+      "linkedin": "http://www.linkedin.com/profile/view?id=138209855",
+      "google_plus": "https://plus.google.com/105222657389911753474/posts",
+      "github": "https://github.com/perminder-klair",
+      "flickr": "https://www.flickr.com/photos/133091320@N03/"
+    }
+  }
+}

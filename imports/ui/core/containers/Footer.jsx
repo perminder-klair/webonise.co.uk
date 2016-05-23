@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 
 const Footer = () => (
@@ -11,22 +12,22 @@ const Footer = () => (
                         Plus, follow me on Twitter and join me on Facebook.
                     </p>
                     <div className="follow_us">
-                        <a href="https://www.twitter.com/pinku1" target="_blank">
+                        <a href={Meteor.settings.public.social.twitter} target="_blank">
                             <i className="fa fa-twitter"/>
                         </a>
-                        <a href="https://www.facebook.com/klair.us" target="_blank">
+                        <a href={Meteor.settings.public.social.facebook} target="_blank">
                             <i className="fa fa-facebook"/>
                         </a>
-                        <a href="http://www.linkedin.com/profile/view?id=138209855" target="_blank">
+                        <a href={Meteor.settings.public.social.linkedin} target="_blank">
                             <i className="fa fa-linkedin"/>
                         </a>
-                        <a href="https://plus.google.com/105222657389911753474/posts" target="_blank">
+                        <a href={Meteor.settings.public.social.google_plus} target="_blank">
                             <i className="fa fa-google-plus"/>
                         </a>
-                        <a href="https://github.com/perminder-klair" target="_blank">
+                        <a href={Meteor.settings.public.social.github} target="_blank">
                             <i className="fa fa-github"/>
                         </a>
-                        <a href="https://www.flickr.com/photos/133091320@N03/" target="_blank">
+                        <a href={Meteor.settings.public.social.flickr} target="_blank">
                             <i className="fa fa-flickr"/>
                         </a>
                     </div>
@@ -35,7 +36,7 @@ const Footer = () => (
         </div>
         <div className="footer-copyright indigo darken-2">
             <div className="container">
-                Webonise.co.uk © 2015 - All Rights Reserved : This site has been <a href="http://www.webonise.co.uk">Webonised</a>.
+                {Meteor.settings.public.site_name} © 2016 - All Rights Reserved : This site has been <a href="http://www.webonise.co.uk">Webonised</a>.
             </div>
         </div>
     </footer>

@@ -30,3 +30,5 @@ seba:minifiers-autoprefixer
 fourseven:scss
 materialize:materialize
 natestrauser:font-awesome
+percolate:velocityjs
+natestrauser:animate-css
