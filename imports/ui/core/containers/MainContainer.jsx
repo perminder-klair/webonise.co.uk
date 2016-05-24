@@ -17,10 +17,10 @@ export default createContainer(() => {
     Meteor.subscribe('flickr', 6);
 
     return {
-        tweets: Tweets.find({}).fetch() || [],
-        github: Github.find({}).fetch() || [],
-        instagram: Instagram.find({}).fetch() || [],
-        diet: Diet.find({}).fetch() || [],
-        flickr: Flickr.find({}).fetch() || []
+        tweet: Tweets.findOne() || {},
+        github: Github.find().fetch() || [],
+        instagram: Instagram.find().fetch() || [],
+        diet: Diet.findOne() || {},
+        flickr: Flickr.find().fetch() || []
     };
 }, MainPage);

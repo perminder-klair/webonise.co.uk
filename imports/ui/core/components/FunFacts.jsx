@@ -3,6 +3,46 @@ import React, { Component, PropTypes } from 'react';
 
 
 class FunFacts extends Component {
+    currentLocation() {
+        return 'N/A';
+    }
+
+    heartBeat() {
+        //todo, getting random now :D
+        var items = [78, 90, 85, 101, 88, 76, 92, 91];
+        return items[Math.floor(Math.random() * items.length)];
+    }
+
+    gitRepos() {
+        //todo!!!
+        return 0
+    }
+
+    mood() {
+        //todo!!!
+        return 'Good';
+    }
+
+    calories() {
+        //todo!!!
+        return 1500;
+    }
+
+    sleepTime() {
+        //todo!!!
+        return '8 hours';
+    }
+
+    drinksCount() {
+        //todo!!!
+        return 5;
+    }
+
+    stepsCount() {
+        //todo!!!
+        return 8402;
+    }
+
     render() {
         return (
             <div className="container fade-in">
@@ -16,7 +56,7 @@ class FunFacts extends Component {
                             <div className="card pink accent-3">
                                 <div className="card-content white-text">
                                     <i className="fa fa-smile-o"/>
-                                    <span className="card-title">mood here</span>
+                                    <span className="card-title">{this.mood()}</span>
                                     <p className="bounceEffect">
                                         Current Mood
                                     </p>
@@ -28,7 +68,7 @@ class FunFacts extends Component {
                                 <a href="#modal1" className="modal-trigger">
                                     <div className="card-content white-text">
                                         <i className="fa fa-bar-chart"/>
-                                        <span className="card-title">calories here</span>
+                                        <span className="card-title">{this.calories()}</span>
                                         <p className="bounceEffect">
                                             Calories Burned
                                         </p>
@@ -40,7 +80,7 @@ class FunFacts extends Component {
                             <div className="card pink accent-3">
                                 <div className="card-content white-text">
                                     <i className="fa fa-clock-o"/>
-                                    <span className="card-title">sleepTime here</span>
+                                    <span className="card-title">{this.sleepTime()}</span>
                                     <p className="bounceEffect">
                                         Sleep Time
                                     </p>
@@ -51,7 +91,7 @@ class FunFacts extends Component {
                             <div className="card pink accent-3">
                                 <div className="card-content white-text">
                                     <i className="fa fa-glass"/>
-                                    <span className="card-title">drinks here</span>
+                                    <span className="card-title">{this.drinksCount()}</span>
                                     <p className="bounceEffect">
                                         Drinks Consumed
                                     </p>
@@ -62,7 +102,7 @@ class FunFacts extends Component {
                             <div className="card pink accent-3">
                                 <div className="card-content white-text">
                                     <i className="fa fa-heart text-red accent-4 heartEffect"/>
-                                    <span className="card-title">heartBeat here</span>
+                                    <span className="card-title">{this.heartBeat()}</span>
                                     <p className="bounceEffect">
                                         Heart Beat
                                     </p>
@@ -73,7 +113,7 @@ class FunFacts extends Component {
                             <div className="card pink accent-3">
                                 <div className="card-content white-text">
                                     <i className="fa fa-tachometer"/>
-                                    <span className="card-title">steps here</span>
+                                    <span className="card-title">{this.stepsCount()}</span>
                                     <p className="bounceEffect">
                                         Steps Walk
                                     </p>
@@ -85,7 +125,7 @@ class FunFacts extends Component {
                                 <a href="{{pathFor 'moves'}}">
                                     <div className="card-content white-text">
                                         <i className="fa fa-location-arrow"/>
-                                        <span className="card-title">currentLocation here</span>
+                                        <span className="card-title">{this.currentLocation()}</span>
                                         <p className="bounceEffect">
                                             Current Location
                                         </p>
@@ -97,7 +137,7 @@ class FunFacts extends Component {
                             <div className="card pink accent-3">
                                 <div className="card-content white-text">
                                     <i className="fa fa-github-alt"/>
-                                    <span className="card-title">repos here</span>
+                                    <span className="card-title">{this.gitRepos()}</span>
                                     <p className="bounceEffect">
                                         Git Repos
                                     </p>
@@ -110,5 +150,9 @@ class FunFacts extends Component {
         )
     }
 }
+
+FunFacts.propTypes = {
+    diet: PropTypes.object.isRequired
+};
 
 export default FunFacts;

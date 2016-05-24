@@ -3,6 +3,10 @@ import React, { Component, PropTypes } from 'react';
 
 import WorkProcess from '../components/WorkProcess.jsx';
 import FunFacts from '../components/FunFacts.jsx';
+import TweetItem from '../../tweets/components/TweetItem.jsx';
+import GitItem from '../../github/components/GitItem.jsx';
+import FlickrItem from '../../flickr/components/FlickrItem.jsx';
+import InstagramItem from '../../instagram/components/InstagramItem.jsx';
 
 class MainPage extends Component {
     //handleSubmit(event) {
@@ -65,6 +69,7 @@ class MainPage extends Component {
     }
 
     render() {
+        console.log(this.props.diet);
         return (
             <span>
                 <div className="section fade-in" id="index-banner">
@@ -84,12 +89,12 @@ class MainPage extends Component {
                             <div className="col s12 m4">
                                 <h2 className="header indigo-text lighten-1 section-title">
                                     <span>
-                                        <a href="{{pathFor 'tweets'}}">
+                                        <a href="#">
                                             <i className="fa fa-twitter"/>Latest Tweets
                                         </a>
                                     </span>
                                 </h2>
-                                --- each tweet here ---
+                                <TweetItem tweet={this.props.tweet} />
                             </div>
                         </div>
                     </div>
@@ -98,10 +103,16 @@ class MainPage extends Component {
                 <div className="container fade-in">
                     <div className="section featured-media">
                         <div className="row">
-                            --- each repo here ---
+                            {this.props.github.map((git) => {
+                                return (
+                                    <div key={git._id} className="col s12 m4">
+                                        <GitItem git={git} />
+                                    </div>
+                                )
+                            })}
                         </div>
                         <div className="row center">
-                            <a href="{{pathFor 'github'}}" id="download-button" className="btn-large waves-effect waves-light pink accent-2">
+                            <a href="#" id="download-button" className="btn-large waves-effect waves-light pink accent-2">
                                 <i className="fa fa-github"/> <span>All Repositories</span>
                             </a>
                         </div>
@@ -110,19 +121,25 @@ class MainPage extends Component {
 
                 <WorkProcess />
                 
-                <FunFacts />
+                <FunFacts diet={this.props.diet} />
                 
                 <div className="container fade-in">
                     <div className="section fun-facts">
                         <h2 className="header indigo-text lighten-1 section-title">
                             <span>
-                                 <a href="{{pathFor 'flickr'}}">
+                                 <a href="#">
                                      <i className="fa fa-flickr"/> Latest Flickr
                                  </a>
                             </span>
                         </h2>
                         <div className="row">
-                            -- each flick here ---
+                            {this.props.flickr.map((image) => {
+                                return (
+                                    <div key={image._id} className="col s4 m2">
+                                        <FlickrItem image={image} />
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
@@ -137,7 +154,13 @@ class MainPage extends Component {
                             </span>
                         </h2>
                         <div className="row">
-                            --- each instagram here ---
+                            {this.props.instagram.map((image) => {
+                                return (
+                                    <div key={image._id} className="col s4 m2">
+                                        <InstagramItem image={image} />
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
@@ -169,10 +192,10 @@ class MainPage extends Component {
 }
 
 MainPage.propTypes = {
-    tweets: PropTypes.array.isRequired,
+    tweet: PropTypes.object.isRequired,
     github: PropTypes.array.isRequired,
     instagram: PropTypes.array.isRequired,
-    diet: PropTypes.array.isRequired,
+    diet: PropTypes.object.isRequired,
     flickr: PropTypes.array.isRequired
 };
 

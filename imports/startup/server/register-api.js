@@ -1,2 +1,9 @@
 import '../../api/links/methods.js';
 import '../../api/links/server/publications.js';
+import '../../api/diet/server/publications.js';
+import '../../api/flickr/server/publications.js';
+import '../../api/github/server/publications.js';
+import '../../api/instagram/server/publications.js';
+import '../../api/skills/server/publications.js';
+import '../../api/timeline/server/publications.js';
+import '../../api/tweets/server/publications.js';
