@@ -52,7 +52,33 @@ class ContactPage extends Component {
                                 </p>
                             </div>
                             <div className="col s12 m8 indigo-text">
-                                ---contact form here---
+                                <form className="col s12">
+                                    <div className="row">
+                                        <div className="input-field col s12">
+                                            <input id="name" type="text" className="validate" />
+                                            <label for="email">Name</label>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="input-field col s12">
+                                            <input id="email" type="email" className="validate" />
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="input-field col s12">
+                                            <textarea id="message" className="materialize-textarea" rows="3"/>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col s12">
+                                            <button className="waves-effect waves-light pink accent-2 btn">
+                                                Send <i className="mdi-content-send right"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

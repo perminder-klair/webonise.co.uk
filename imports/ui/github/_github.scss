@@ -1,0 +1,192 @@
+.bar {
+  box-shadow: 1px 1px 1px 1px #CCC;
+  border-radius: 2px;
+  width: 580px;
+  padding: 10px;
+  margin: 20px auto 25px;
+  position: relative;
+  text-align: right;
+  line-height: 1;
+}
+
+.bar h2 {
+  float: left;
+  margin-top: 0.2em;
+}
+
+.bar a {
+  background: #FFFFFF center center no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  text-decoration: none !important;
+  margin-right: 5px;
+  border-right: 2px;
+}
+
+.bar a.active {
+  background-color: #C1C1C1;
+  border-radius: 20px;
+}
+
+.bar a.starred {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABCUlEQVRIieXTLUsEURTG8Z8ihsUgi2wQg8k0yWQQk8224jcwiEn8JkajH0BMYlywikkMKxjEIBgFEfFlDTOw18GZvXdkg/iHC5fDc55zztwz/EcmxybGMlZTEqYSC2yhhfPEvGj6uJc+eRQZBsVZiU1K6aQb3DcT8qK5MpzgNjZpIrjPYbZCt4BeKbaBmwr9Ex7LwTZOgi6bnjN06qbaxUsD41fsi3zXDNcJ5n35T5hEC4cR5keYSTUPuRzR+a+Yx0dNgQGW6gxGPUi3pPnE+w+axvQMO33AOtZwF8Qvmpp38FaYnPq+220cB0UWmxTYlu/2nupPuYPnQpPMgbjdzuTrnMz0mLR/jC8tTGjIremR4AAAAABJRU5ErkJggg==);
+}
+
+.bar a.repos {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABVklEQVRIie3VPUtcQRQG4MdrWEQMLFHBQhYlICkkREiZIliJVZq0IaXkL6RX9gcknVV+QFCrrW1FsJEEJIhFDCIYFglk2awpZoo1uV+z9b5wuWfmfLxnhnPOMEYFJkt063iMCwwKbJrYxG/c5BlMlBAc4kUk+IB5zKGP75jCO8zgPbbzgjwoIZiK/xbaJXYwW6TISvaLdHlYTbAFb3GX+G0UZZqH16kZFfkUESyOQLCUQtAdgaCXtzlcRS08ivKZUKIp+IFnUe7iG/dP8GtovYvrhOC3+BTlLK4r8RQnqqvnEi8TkjGNLeG6sujcxp9/AnfwRujkZDzHntBAGXZyMv9cJ1DRqDgSZtABGjHLUzzBl2izUoegbJp2hEr4KvTFFZYjwU88xMcqgrJhN8B+lNewUJ3v/0gZaD1hVPeEkm7UcSp7D4bxSriiJs6F0/RxrGbNj1GIv50WUG+6GENzAAAAAElFTkSuQmCC);
+}
+
+@media (max-width: 768px) {
+  .bar {
+    width: 90%;
+  }
+}
+
+/*-------------------------
+	CONTENT
+--------------------------*/
+
+div.content {
+  list-style: none;
+  width: 590px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  div.content {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/*-------------------------
+	GITHUB BOX
+--------------------------*/
+
+.github-box {
+  background: none repeat scroll 0 0 #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #666;
+  float: left;
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  line-height: 1em;
+  margin-bottom: 2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 47%;
+}
+.github-box a {
+  border: medium none;
+  color: #4183c4;
+}
+.github-box .github-box-header {
+  background: linear-gradient(#fcfcfc, #ebebeb) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+}
+.github-box .github-box-header h3 {
+  color: gray;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  padding: 10px;
+}
+.github-box .github-box-header h3 a {
+  font-weight: bold;
+}
+.github-box .github-box-header .github-stats {
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  height: 21px;
+  line-height: 21px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.github-box .github-box-header .github-stats a {
+  background: url("../img/btn-sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color: #666;
+  display: inline-block;
+  height: 21px;
+  opacity: 0.7;
+  padding: 0 5px 0 18px;
+}
+.github-box .github-box-header .github-stats .repo-watchers {
+  background-position: 3px 4px;
+  border-right: 1px solid #ddd;
+}
+.github-box .github-box-header .github-stats .repo-forks {
+  background-position: 2px -14px;
+  padding-left: 15px;
+}
+.github-box .github-box-content {
+  font-size: 0.7em;
+  font-weight: 300;
+  padding: 10px;
+  height: 40px;
+}
+.github-box .github-box-content span {
+  color: #FF0303;
+}
+.github-box .github-box-content p {
+  margin: 0;
+}
+.github-box .github-box-download {
+  background: none repeat scroll 0 0 white;
+  border-radius: 0 0 3px 3px;
+  border-top: 1px solid #ddd;
+  height: 24px;
+  padding: 10px;
+  position: relative;
+}
+.github-box .github-box-download .repo-update {
+  color: #666;
+  font-size: 11px;
+  line-height: 24px;
+  margin: 0;
+}
+.github-box .github-box-download .repo-update strong {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+}
+.github-box .github-box-download .repo-download {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: url("../img/btn-sprite.png") no-repeat scroll 4px -31px, linear-gradient(#f1f7fa, #dbeaf1) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border-color: #ddd #ddd #bbb;
+  border-image: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #666;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 24px;
+  opacity: 0.7;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  text-indent: -9999px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  top: 10px;
+  width: 23px;
+}
+@media screen and (max-width: 768px) {
+  .github-box {
+    width: 100%;
+    margin: 0.5em auto;
+  }
+}

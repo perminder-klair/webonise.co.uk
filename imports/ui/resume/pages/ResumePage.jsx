@@ -30,7 +30,6 @@ class ResumePage extends Component {
     }
 
     render() {
-        console.log(this.props.timeline);
         return (
             <span>
                 <div className="section fade-in" id="index-banner">

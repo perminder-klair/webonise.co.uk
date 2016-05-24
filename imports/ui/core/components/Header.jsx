@@ -25,13 +25,13 @@ class Header extends Component {
                             <li><a href={FlowRouter.path('main')}>about me</a></li>
                             <li><a href={FlowRouter.path('resume')}>resume</a></li>
                             <li><a href={FlowRouter.path('contact')}>contact</a></li>
-                            <li><a href="#">resources</a></li>
+                            <li><a href={FlowRouter.path('resources')}>resources</a></li>
                         </ul>
                         <ul className="side-nav" id="mobile-demo">
                             <li><a href={FlowRouter.path('main')}>about me</a></li>
                             <li><a href={FlowRouter.path('resume')}>resume</a></li>
                             <li><a href={FlowRouter.path('contact')}>contact</a></li>
-                            <li><a href="#">resources</a></li>
+                            <li><a href={FlowRouter.path('resources')}>resources</a></li>
                         </ul>
                     </div>
                 </nav>

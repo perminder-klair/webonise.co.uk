@@ -7,3 +7,4 @@ import '../../api/instagram/server/publications.js';
 import '../../api/skills/server/publications.js';
 import '../../api/timeline/server/publications.js';
 import '../../api/tweets/server/publications.js';
+import '../../api/resources/server/publications.js';
