@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import WorkProcess from '../components/WorkProcess.jsx';
 import FunFacts from '../components/FunFacts.jsx';
@@ -9,24 +10,6 @@ import FlickrItem from '../../flickr/components/FlickrItem.jsx';
 import InstagramItem from '../../instagram/components/InstagramItem.jsx';
 
 class MainPage extends Component {
-    //handleSubmit(event) {
-    //    event.preventDefault();
-    //
-    //    // Find the text field via the React ref
-    //    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-    //
-    //    Meteor.call('links.insert', text);
-    //
-    //    // Clear form
-    //    ReactDOM.findDOMNode(this.refs.textInput).value = '';
-    //}
-    //
-    //renderLinks() {
-    //    return this.props.links.map((link) => (
-    //        <Link key={link._id} link={link} />
-    //    ));
-    //}
-
     componentDidMount() {
         $('.fade-in').velocity("fadeIn", { duration: 500 });
 
@@ -88,7 +71,7 @@ class MainPage extends Component {
                             <div className="col s12 m4">
                                 <h2 className="header indigo-text lighten-1 section-title">
                                     <span>
-                                        <a href="#">
+                                        <a href={FlowRouter.path('tweets')}>
                                             <i className="fa fa-twitter"/>Latest Tweets
                                         </a>
                                     </span>
@@ -111,7 +94,10 @@ class MainPage extends Component {
                             })}
                         </div>
                         <div className="row center">
-                            <a href="#" id="download-button" className="btn-large waves-effect waves-light pink accent-2">
+                            <a
+                                href={FlowRouter.path('github')}
+                                id="download-button"
+                                className="btn-large waves-effect waves-light pink accent-2">
                                 <i className="fa fa-github"/> <span>All Repositories</span>
                             </a>
                         </div>
@@ -126,7 +112,7 @@ class MainPage extends Component {
                     <div className="section fun-facts">
                         <h2 className="header indigo-text lighten-1 section-title">
                             <span>
-                                 <a href="#">
+                                 <a href={FlowRouter.path('flickr')}>
                                      <i className="fa fa-flickr"/> Latest Flickr
                                  </a>
                             </span>
@@ -147,7 +133,7 @@ class MainPage extends Component {
                     <div className="section fun-facts">
                         <h2 className="header indigo-text lighten-1 section-title">
                             <span>
-                                 <a href="{{pathFor 'instagram'}}">
+                                 <a href={FlowRouter.path('instagram')}>
                                      <i className="fa fa-instagram"/> Latest Instagram
                                  </a>
                             </span>
@@ -166,28 +152,6 @@ class MainPage extends Component {
             </span>
         )
     }
-
-    //renderOld() {
-    //    return (
-    //        <div className="ui container">
-    //            <header>
-    //                <h1>Links List</h1>
-    //                <AccountsUIWrapper />
-    //                <form className="new-link" onSubmit={this.handleSubmit.bind(this)} >
-    //                    <input
-    //                        type="text"
-    //                        ref="textInput"
-    //                        placeholder="Type link URL"
-    //                    />
-    //                </form>
-    //            </header>
-    //
-    //            <ul>
-    //                {this.renderLinks()}
-    //            </ul>
-    //        </div>
-    //    );
-    //}
 }
 
 MainPage.propTypes = {
