@@ -11,7 +11,8 @@ export default createContainer(() => {
     Meteor.subscribe('timeline');
 
     return {
-        skills: Skills.find({}, {sort: {title: 1}}).fetch() || [],
+        personalSkills: Skills.find({type: 'personal'}, {sort: {title: 1}}).fetch() || [],
+        programmingSkills: Skills.find({type: 'programming'}, {sort: {title: 1}}).fetch() || [],
         timeline: Timeline.find({}, {sort: {event_time: -1}}).fetch() || []
     };
 }, ResumePage);

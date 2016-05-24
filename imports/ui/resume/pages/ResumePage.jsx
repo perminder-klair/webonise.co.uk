@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 
+import TimelineItem from '../components/TimelineItem.jsx';
+
 class ResumePage extends Component {
     componentDidMount() {
         $('.fade-in').velocity("fadeIn", { duration: 500 });
@@ -28,6 +30,7 @@ class ResumePage extends Component {
     }
 
     render() {
+        console.log(this.props.timeline);
         return (
             <span>
                 <div className="section fade-in" id="index-banner">
@@ -74,13 +77,31 @@ class ResumePage extends Component {
                                     Man behind the gun, any sophisticated weapons. Human remains that taking the role. We are experienced in utilizing all resources, for best results and perfect quality.
                                 </p>
                                 <div className="skills">
-                                    --- programmingSkills ---
+                                    {this.props.programmingSkills.map((item) => {
+                                        return (
+                                            <a
+                                                key={item._id}
+                                                className="waves-effect waves-light btn indigo"
+                                                style={{marginRight: '5px', marginBottom: '5px'}}>
+                                                {item.title}
+                                            </a>
+                                        )
+                                    })}
                                 </div>
                                 <h2 className="header indigo-text lighten-1 section-title">
                                     <span><i className="mdi-action-grade"/>Personal Skills</span>
                                 </h2>
                                 <div className="skills">
-                                    --- personalSkills ---
+                                    {this.props.personalSkills.map((item) => {
+                                        return (
+                                            <a
+                                                key={item._id}
+                                                className="waves-effect waves-light btn indigo lighten-1"
+                                                style={{marginRight: '5px', marginBottom: '5px'}}>
+                                                {item.title}
+                                            </a>
+                                        )
+                                    })}
                                 </div>
                             </div>
                             <div className="col s12 m8">
@@ -88,7 +109,7 @@ class ResumePage extends Component {
                                     <span><i className="mdi-social-school"/>When Where What</span>
                                 </h2>
                                 <ul className="cbp_tmtimeline">
-                                    --- timeline ---
+                                    {this.props.timeline.map((item) => <TimelineItem key={item._id} item={item}/>)}
                                 </ul>
                             </div>
                         </div>
@@ -100,7 +121,8 @@ class ResumePage extends Component {
 }
 
 ResumePage.propTypes = {
-    skills: PropTypes.array.isRequired,
+    personalSkills: PropTypes.array.isRequired,
+    programmingSkills: PropTypes.array.isRequired,
     timeline: PropTypes.array.isRequired
 };
 

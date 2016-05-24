@@ -69,7 +69,6 @@ class MainPage extends Component {
     }
 
     render() {
-        console.log(this.props.diet);
         return (
             <span>
                 <div className="section fade-in" id="index-banner">
