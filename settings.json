@@ -12,5 +12,39 @@
       "flickr": "https://www.flickr.com/photos/133091320@N03/"
     },
     "limit": 20
+  },
+  "instagram": {
+    "client_id": "",
+    "client_secret": ""
+  },
+  "facebook": {
+    "appId": "",
+    "secret": ""
+  },
+  "mailgun": {
+    "username": "",
+    "password": ""
+  },
+  "kadira": {
+    "id": "",
+    "secret": ""
+  },
+  "github": {
+    "repo_url": "",
+    "user_agent": ""
+  },
+  "pocket": {
+    "redirect_uri": "",
+    "consumer_key": "",
+    "access_token": ""
+  },
+  "twitter": {
+    "consumer_key": "",
+    "consumer_secret": "",
+    "access_token_key": "",
+    "access_token_secret": ""
+  },
+  "stackable": {
+    "stack_key": ""
   }
 }
