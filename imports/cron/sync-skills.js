@@ -1,9 +1,10 @@
+import { Meteor } from 'meteor/meteor';
 import Stackable from 'stackable';
 import async from 'async';
 
 import { Skills } from '../api/skills/skills.js';
 
-var stackable = new Stackable('eeFuYBqGA8Qv');
+var stackable = new Stackable(Meteor.settings.stackable.stack_key);
 
 exports.syncSkills = function() {
     console.log('start sync');
@@ -12,7 +13,7 @@ exports.syncSkills = function() {
     async.series([
         Meteor.bindEnvironment((callback) => {
             //get data from stackable
-            stackable.getContainerItems('2LM4yZiRvybxrHSbc', (error, result) => {
+            stackable.getContainerItems(Meteor.settings.stackable.skills_container, (error, result) => {
                 //console.log(error, result);
                 data = result.data;
                 callback(null);
