@@ -79,7 +79,7 @@ exports.syncInstagram = function() {
             async.each(data, (row, callbackEach) => {
                 if (!_.isUndefined(options['min_id'])) {
                     if (options['min_id'] == row.id) {
-                        return false;
+                        return callbackEach();
                     }
                 }
                 Instagram.insert(setData(row));
