@@ -3,8 +3,9 @@ const CronJob = require('cron').CronJob;
 
 import {syncSkills} from './sync-skills.js';
 import {syncTimeline} from './sync-timeline.js';
-import {syncFlickr} from './sync-flickr';
-import {syncGithub} from './sync-github';
+import {syncFlickr} from './sync-flickr.js';
+import {syncGithub} from './sync-github.js';
+import {syncInstagram} from './sync-instagram.js';
 
 Meteor.methods({
     'sync'() {
@@ -12,6 +13,7 @@ Meteor.methods({
         //syncTimeline();
         //syncFlickr();
         //syncGithub();
+        syncInstagram();
     }
 });
 
@@ -23,6 +25,7 @@ var job = new CronJob({
         //syncTimeline();
         //syncFlickr();
         //syncGithub();
+        //syncInstagram();
     },
     start: false
 });

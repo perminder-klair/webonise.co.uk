@@ -28,7 +28,7 @@ Instagram.schema = new SimpleSchema({
         type: String
     },
     images: {
-        type: [Object],
+        type: Object,
         optional: true,
         blackbox: true
     },
