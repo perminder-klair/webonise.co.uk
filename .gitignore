@@ -22,3 +22,5 @@ bundle.tar.gz
 
 # project files
 node_modules
+
+settings-dev.json

@@ -45,7 +45,8 @@
     "access_token_secret": ""
   },
   "stackable": {
-    "stack_key": "eeFuYBqGA8Qv",
-    "skills_container": "2LM4yZiRvybxrHSbc"
+    "stack_key": "",
+    "skills_container": "",
+    "timeline_container": ""
   }
 }

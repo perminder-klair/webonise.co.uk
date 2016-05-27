@@ -2,10 +2,14 @@ import { Meteor } from 'meteor/meteor';
 const CronJob = require('cron').CronJob;
 
 import {syncSkills} from './sync-skills.js';
+import {syncTimeline} from './sync-timeline.js';
+import {syncFlickr} from './sync-flickr';
 
 Meteor.methods({
-    'sync.skills'() {
-        syncSkills();
+    'sync'() {
+        //syncSkills();
+        //syncTimeline();
+        //syncFlickr();
     }
 });
 
@@ -14,6 +18,8 @@ var job = new CronJob({
     onTick: function() {
         console.log('You will see this message every minute');
         //syncSkills();
+        //syncTimeline();
+        //syncFlickr();
     },
     start: false
 });
