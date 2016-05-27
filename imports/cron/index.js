@@ -7,6 +7,7 @@ import {syncFlickr} from './sync-flickr.js';
 import {syncGithub} from './sync-github.js';
 import {syncInstagram} from './sync-instagram.js';
 import {syncTwitter} from './sync-twitter.js';
+import {syncPocket} from './sync-pocket.js';
 
 Meteor.methods({
     'sync'() {
@@ -15,7 +16,8 @@ Meteor.methods({
         //syncFlickr();
         //syncGithub();
         //syncInstagram();
-        syncTwitter();
+        //syncTwitter();
+        syncPocket();
     }
 });
 
@@ -29,6 +31,7 @@ var job = new CronJob({
         //syncGithub();
         //syncInstagram();
         //syncTwitter();
+        //syncPocket();
     },
     start: false
 });
