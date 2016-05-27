@@ -13,14 +13,16 @@ class DietCollection extends Mongo.Collection {
     remove(selector) {
         return super.remove(selector);
     }
+    upsert(selector, modifier) {
+        return super.upsert(selector, modifier);
+    }
 }
 
 export const Diet = new DietCollection('diet');
 
 Diet.schema = new SimpleSchema({
     km: {
-        type: Number,
-        min: 0,
+        type: String,
         optional: true
     },
     steps: {
@@ -29,8 +31,7 @@ Diet.schema = new SimpleSchema({
         optional: true
     },
     calories: {
-        type: Number,
-        min: 0,
+        type: String,
         optional: true
     },
     sleepTime: {

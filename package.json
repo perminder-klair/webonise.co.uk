@@ -10,6 +10,7 @@
     "cron": "^1.1.0",
     "flickrapi": "^0.4.2",
     "instagram-node": "^0.5.8",
+    "jawbone-up": "^0.1.2",
     "meteor-node-stubs": "~0.2.3",
     "moment": "^2.13.0",
     "react": "^15.1.0",
