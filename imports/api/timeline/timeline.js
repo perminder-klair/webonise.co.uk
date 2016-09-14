@@ -37,7 +37,7 @@ Timeline.schema = new SimpleSchema({
         type: String
     },
     event_time: {
-        type: Date
+        type: String
     },
     icon: {
         type: String,

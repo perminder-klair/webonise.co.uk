@@ -13,11 +13,11 @@ import { syncJawboneUp } from './sync-jawbone-up.js';
 //To test using meteor call or to run sync manually
 Meteor.methods({
     'sync'() {
-        //syncSkills();//stackable api broken
-        //syncTimeline();//stackable api broken
+        syncSkills();//works
+        syncTimeline();//works
         syncFlickr();//works
         syncGithub();//works
-        //syncInstagram();//need new auth key
+        syncInstagram();//works
         syncTwitter();//works
         syncPocket();//works
         syncJawboneUp();//works
@@ -29,11 +29,11 @@ let job = new CronJob({
     onTick: function() {
         //console.log('You will see this message every minute');
 
-        //syncSkills();
-        //syncTimeline();
+        syncSkills();
+        syncTimeline();
         syncFlickr();
         syncGithub();
-        //syncInstagram();
+        syncInstagram();
         syncTwitter();
         syncPocket();
         syncJawboneUp();

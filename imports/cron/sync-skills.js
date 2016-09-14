@@ -16,7 +16,7 @@ exports.syncSkills = function () {
         Meteor.bindEnvironment((callback) => {
             //get data from stackable
             stackable.getContainerItems(serviceConfig.skills_container, Meteor.bindEnvironment((error, result) => {
-                console.log(error, result);
+                //console.log(error, result);
                 data = result.data;
                 callback(error);
             }));
@@ -26,7 +26,7 @@ exports.syncSkills = function () {
             Skills.remove({});
             callback(null);
         },
-        (callback) => {
+        Meteor.bindEnvironment((callback) => {
             //now insert new
             async.each(data, (row, callbackEach) => {
                 //console.log(row.data);
@@ -34,10 +34,11 @@ exports.syncSkills = function () {
                     title: row.data.title,
                     type: row.data.type
                 });
+
                 callbackEach();
             }, (err) => {
                 callback(null);
             });
-        }
+        })
     ]);
 };

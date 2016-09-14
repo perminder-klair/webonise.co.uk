@@ -22,11 +22,11 @@ exports.syncFlickr = function() {
     let options = {};
 
     async.series([
-        Meteor.bindEnvironment((callback) => {
+        (callback) => {
             //first get last flickr item
             lastItem = Flickr.findOne({}, {sort: {dateupload: -1}});
             callback();
-        }),
+        },
         Meteor.bindEnvironment((callback) => {
             if (lastItem) {
                 options['min_upload_date'] = lastItem.dateupload;
