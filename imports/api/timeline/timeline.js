@@ -17,6 +17,13 @@ class TimelineCollection extends Mongo.Collection {
 
 export const Timeline = new TimelineCollection('timeline');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Timeline.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Timeline.schema = new SimpleSchema({
     title: {
         type: String,
@@ -55,12 +62,3 @@ Timeline.publicFields = {
     icon: 1,
     color: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

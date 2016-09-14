@@ -17,6 +17,13 @@ class TweetsCollection extends Mongo.Collection {
 
 export const Tweets = new TweetsCollection('tweets');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Tweets.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Tweets.schema = new SimpleSchema({
     twid: {
         type: String,
@@ -41,12 +48,3 @@ Tweets.publicFields = {
     date: 1,
     createdAt: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

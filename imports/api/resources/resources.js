@@ -17,6 +17,13 @@ class ResourcesCollection extends Mongo.Collection {
 
 export const Resources = new ResourcesCollection('resources');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Resources.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Resources.schema = new SimpleSchema({
     title: {
         type: String,
@@ -54,12 +61,3 @@ Resources.publicFields = {
     description: 1,
     type: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

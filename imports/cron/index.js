@@ -12,7 +12,7 @@ import { syncJawboneUp } from './sync-jawbone-up.js';
 
 Meteor.methods({
     'sync'() {
-        syncSkills();
+        //syncSkills();
         //syncTimeline();
         //syncFlickr();
         //syncGithub();

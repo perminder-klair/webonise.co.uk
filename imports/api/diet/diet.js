@@ -20,6 +20,13 @@ class DietCollection extends Mongo.Collection {
 
 export const Diet = new DietCollection('diet');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Diet.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Diet.schema = new SimpleSchema({
     km: {
         type: String,
@@ -137,12 +144,3 @@ Diet.publicFields = {
     meals: 1,
     date: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

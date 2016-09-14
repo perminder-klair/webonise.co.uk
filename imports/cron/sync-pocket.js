@@ -6,8 +6,9 @@ import moment from 'moment';
 
 import { Resources } from '../api/resources/resources.js';
 
-const consumer_key = Meteor.settings.pocket.consumer_key;
-const access_token = Meteor.settings.pocket.access_token;
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'pocket'});
+const consumer_key = serviceConfig.consumer_key;
+const access_token = serviceConfig.access_token;
 
 exports.syncPocket = function() {
     console.log('start sync');

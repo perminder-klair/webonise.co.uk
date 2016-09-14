@@ -6,9 +6,10 @@ import moment from 'moment';
 import { Diet } from '../api/diet/diet.js';
 import { UpMood } from '../api/diet/upMood.js';
 
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'jawbone_up'});
 const up = require('jawbone-up')({
-    access_token: Meteor.settings.jawbone_up.access_token,
-    client_secret: Meteor.settings.jawbone_up.client_secret
+    access_token: serviceConfig.access_token,
+    client_secret: serviceConfig.client_secret
 });
 
 let syncMood = function () {

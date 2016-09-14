@@ -4,7 +4,7 @@
 
 ```bash
 npm install
-meteor --settings settings.json
+npm start
 ```
 
 ## To deploy

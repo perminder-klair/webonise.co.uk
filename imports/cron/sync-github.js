@@ -6,7 +6,8 @@ import moment from 'moment';
 
 import { Github } from '../api/github/github.js';
 
-const username = Meteor.settings.github.username;
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'github'});
+const username = serviceConfig.username;
 
 var createData = function (data) {
     return {

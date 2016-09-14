@@ -17,6 +17,13 @@ class GithubCollection extends Mongo.Collection {
 
 export const Github = new GithubCollection('github');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Github.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Github.schema = new SimpleSchema({
     gitId: {
         type: String,
@@ -89,12 +96,3 @@ Github.publicFields = {
     createdAtGit: 1,
     updatedAtGit: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

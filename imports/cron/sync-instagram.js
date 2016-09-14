@@ -6,7 +6,8 @@ import moment from 'moment';
 
 import { Instagram } from '../api/instagram/instagram.js';
 
-const accessToken = Meteor.settings.instagram.access_token;
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'instagram'});
+const accessToken = serviceConfig.access_token;
 
 let getSelfMedia = function (options, all_media, callBackMain) {
     options['count'] = 33;

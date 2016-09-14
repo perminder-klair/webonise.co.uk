@@ -17,6 +17,13 @@ class InstagramCollection extends Mongo.Collection {
 
 export const Instagram = new InstagramCollection('instagram');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Instagram.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Instagram.schema = new SimpleSchema({
     instaId: {
         type: String
@@ -50,12 +57,3 @@ Instagram.publicFields = {
     date: 1,
     createdAt: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

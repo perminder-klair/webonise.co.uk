@@ -17,6 +17,13 @@ class SkillsCollection extends Mongo.Collection {
 
 export const Skills = new SkillsCollection('skills');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Skills.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Skills.schema = new SimpleSchema({
     title: {
         type: String,
@@ -42,12 +49,3 @@ Skills.publicFields = {
     description: 1,
     type: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

@@ -38,12 +38,3 @@ UpMood.publicFields = {
     date: 1,
     createdAt: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});

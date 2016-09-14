@@ -11,5 +11,8 @@ import './security.js';
 // as an API to the client.
 import './register-api.js';
 
+// load oauth values from settings to services configuration
+import './configure-services.js';
+
 // Start cron services
 import '../../cron';

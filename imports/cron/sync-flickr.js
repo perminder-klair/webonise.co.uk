@@ -2,15 +2,18 @@ import { Meteor } from 'meteor/meteor';
 import async from 'async';
 import FlickrApi from 'flickrapi';
 import _ from 'underscore';
+import { ServiceConfiguration } from 'meteor/service-configuration';
 
 import { Flickr } from '../api/flickr/flickr.js';
 
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'flickr'});
+
 const flickrOptions = {
-    api_key: Meteor.settings.flickr.api_key,
-    secret: Meteor.settings.flickr.secret
+    api_key: serviceConfig.api_key,
+    secret: serviceConfig.secret
 };
 
-const flickrUserId = Meteor.settings.flickr.flickr_user_id;
+const flickrUserId = serviceConfig.flickr_user_id;
 
 exports.syncFlickr = function() {
     console.log('start sync');

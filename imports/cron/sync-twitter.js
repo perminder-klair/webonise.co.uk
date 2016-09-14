@@ -6,11 +6,12 @@ import moment from 'moment';
 
 import { Tweets } from '../api/tweets/tweets.js';
 
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'twitter'});
 const twitterClient = new TwitterApi({
-    consumer_key: Meteor.settings.twitter.consumer_key,
-    consumer_secret: Meteor.settings.twitter.consumer_secret,
-    access_token_key: Meteor.settings.twitter.access_token_key,
-    access_token_secret: Meteor.settings.twitter.access_token_secret
+    consumer_key: serviceConfig.consumer_key,
+    consumer_secret: serviceConfig.consumer_secret,
+    access_token_key: serviceConfig.access_token_key,
+    access_token_secret: serviceConfig.access_token_secret
 });
 
 exports.syncTwitter = function() {

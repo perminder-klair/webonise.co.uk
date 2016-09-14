@@ -4,9 +4,9 @@ import async from 'async';
 
 import { Skills } from '../api/skills/skills.js';
 
-let { stack_key, skills_container } = Meteor.settings.stackable;
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'stackable'});
 
-let stackable = new Stackable(stack_key);
+let stackable = new Stackable(serviceConfig.stack_key);
 
 exports.syncSkills = function () {
     console.log('start skills sync');
@@ -15,7 +15,7 @@ exports.syncSkills = function () {
     async.series([
         Meteor.bindEnvironment((callback) => {
             //get data from stackable
-            stackable.getContainerItems(skills_container, Meteor.bindEnvironment((error, result) => {
+            stackable.getContainerItems(serviceConfig.skills_container, Meteor.bindEnvironment((error, result) => {
                 console.log(error, result);
                 data = result.data;
                 callback(error);

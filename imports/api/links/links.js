@@ -17,6 +17,13 @@ class LinksCollection extends Mongo.Collection {
 
 export const Links = new LinksCollection('links');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Links.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Links.schema = new SimpleSchema({
     text: {
         type: String,

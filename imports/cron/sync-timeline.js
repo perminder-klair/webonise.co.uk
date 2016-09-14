@@ -4,7 +4,8 @@ import Stackable from 'stackable';
 
 import { Timeline } from '../api/timeline/timeline.js';
 
-var stackable = new Stackable(Meteor.settings.stackable.stack_key);
+const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'stackable'});
+var stackable = new Stackable(serviceConfig.stack_key);
 
 exports.syncTimeline = function() {
     console.log('start sync');
@@ -13,7 +14,7 @@ exports.syncTimeline = function() {
     async.series([
         Meteor.bindEnvironment((callback) => {
             //get data from stackable
-            stackable.getContainerItems(Meteor.settings.stackable.timeline_container, (error, result) => {
+            stackable.getContainerItems(serviceConfig.timeline_container, (error, result) => {
                 //console.log(error, result);
                 data = result.data;
                 callback(null);

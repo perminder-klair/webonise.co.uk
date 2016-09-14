@@ -17,6 +17,13 @@ class FlickrCollection extends Mongo.Collection {
 
 export const Flickr = new FlickrCollection('flickr');
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Flickr.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; }
+});
+
 Flickr.schema = new SimpleSchema({
     url: {
         type: String
@@ -41,12 +48,3 @@ Flickr.attachSchema(Flickr.schema);
 Flickr.publicFields = {
     createdAt: 1
 };
-
-//Links.helpers({
-//    list() {
-//        return {};//Lists.findOne(this.listId);
-//    },
-//    editableBy(userId) {
-//        return this.list().editableBy(userId);
-//    },
-//});
