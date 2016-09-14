@@ -14,20 +14,21 @@ let getSelfMedia = function (options, all_media, callBackMain) {
 
     ig.user_self_media_recent(options, function (err, medias, pagination, remaining, limit) {
         if(err) {
-            throw new Meteor.Error(401, err);
-        }
-
-        all_media = medias.concat(all_media);
-
-        if (!_.isUndefined(pagination.next_max_id)) {
-            //got more media
-            options['max_id'] = pagination.next_max_id;
-            getSelfMedia(options, all_media, function (data) {
-                all_media = data.concat(all_media);
-                callBackMain(data);
-            });
+            //throw new Meteor.Error(401, err);
+            console.log('instagram sync failed', err);
         } else {
-            callBackMain(all_media);
+            all_media = medias.concat(all_media);
+
+            if (!_.isUndefined(pagination.next_max_id)) {
+                //got more media
+                options['max_id'] = pagination.next_max_id;
+                getSelfMedia(options, all_media, function (data) {
+                    all_media = data.concat(all_media);
+                    callBackMain(data);
+                });
+            } else {
+                callBackMain(all_media);
+            }
         }
     });
 };

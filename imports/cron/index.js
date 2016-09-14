@@ -10,31 +10,33 @@ import { syncTwitter} from './sync-twitter.js';
 import { syncPocket } from './sync-pocket.js';
 import { syncJawboneUp } from './sync-jawbone-up.js';
 
+//To test using meteor call or to run sync manually
 Meteor.methods({
     'sync'() {
-        //syncSkills();
-        //syncTimeline();
-        //syncFlickr();
-        //syncGithub();
-        //syncInstagram();
-        //syncTwitter();
-        //syncPocket();
-        //syncJawboneUp();
+        //syncSkills();//stackable api broken
+        //syncTimeline();//stackable api broken
+        syncFlickr();//works
+        syncGithub();//works
+        //syncInstagram();//need new auth key
+        syncTwitter();//works
+        syncPocket();//works
+        syncJawboneUp();//works
     }
 });
 
-var job = new CronJob({
+let job = new CronJob({
     cronTime: '* * * * *',
     onTick: function() {
         //console.log('You will see this message every minute');
+
         //syncSkills();
         //syncTimeline();
-        //syncFlickr();
-        //syncGithub();
+        syncFlickr();
+        syncGithub();
         //syncInstagram();
-        //syncTwitter();
-        //syncPocket();
-        //syncJawboneUp();
+        syncTwitter();
+        syncPocket();
+        syncJawboneUp();
     },
     start: false
 });

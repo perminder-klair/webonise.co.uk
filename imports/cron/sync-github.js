@@ -57,7 +57,7 @@ exports.syncGithub = function() {
         Meteor.bindEnvironment((callback) => {
             //insert new data
             async.each(data, (row, callbackEach) => {
-                if (lastItem) {
+                if (!_.isUndefined(lastItem[0])) {
                     if (moment(lastItem[0].created_at).isBefore(row.created_at)) {
                         //if repo does no exists
                         Github.insert(createData(row), {validate: false});
