@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "async": "^1.5.2",
+    "bcrypt": "^0.8.7",
     "classnames": "^2.2.5",
     "cron": "^1.1.0",
     "flickrapi": "^0.4.2",

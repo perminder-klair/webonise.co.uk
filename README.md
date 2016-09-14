@@ -1,4 +1,4 @@
-# Webonise.co.uk official code
+# Webonise.co.uk official source code
 
 ### Running the app
 
@@ -29,11 +29,13 @@ Border Color: #DDDDDD
 
 ## Meteor Up Deployment
 
-Go to directory: `private/cli`, and type following:
+Go to directory: `./deploy`, and type following:
 
 ```
 mup deploy
 ```
+
+For more details read: [https://github.com/kadirahq/meteor-up](https://github.com/kadirahq/meteor-up)
 
 ### Scripts
 

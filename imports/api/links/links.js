@@ -15,7 +15,7 @@ class LinksCollection extends Mongo.Collection {
     }
 }
 
-export const Links = new LinksCollection('Links');
+export const Links = new LinksCollection('links');
 
 Links.schema = new SimpleSchema({
     text: {
