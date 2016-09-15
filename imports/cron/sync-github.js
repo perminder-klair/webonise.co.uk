@@ -3,6 +3,7 @@ import { HTTP } from 'meteor/http';
 import async from 'async';
 import _ from 'underscore';
 import moment from 'moment';
+import Future from 'fibers/future';
 
 import { Github } from '../api/github/github.js';
 
@@ -27,17 +28,18 @@ var createData = function (data) {
     };
 };
 
-exports.syncGithub = function() {
-    console.log('start sync');
+exports.syncGithub =  function() {
+    console.log('start github sync');
     let data;
     let lastItem;
+    var fut = new Future();
 
     async.series([
-        Meteor.bindEnvironment((callback) => {
+        (callback) => {
             //first get last github item
             lastItem = Github.findOne({}, {sort: {created_at: -1}});
             callback();
-        }),
+        },
         Meteor.bindEnvironment((callback) => {
             //get data from github
             HTTP.call('GET', `https://api.github.com/users/${username}/repos`, {
@@ -49,15 +51,15 @@ exports.syncGithub = function() {
                 "headers": {
                     "User-Agent": username
                 }
-            }, function (err, res) {
+            }, (err, res) => {
                 data = res.data;
                 callback(err);
             });
         }),
-        Meteor.bindEnvironment((callback) => {
+        (callback) => {
             //insert new data
             async.each(data, (row, callbackEach) => {
-                if (!_.isUndefined(lastItem[0])) {
+                if (!_.isUndefined(lastItem) && !_.isUndefined(lastItem[0])) {
                     if (moment(lastItem[0].created_at).isBefore(row.created_at)) {
                         //if repo does no exists
                         Github.insert(createData(row), {validate: false});
@@ -73,8 +75,11 @@ exports.syncGithub = function() {
                     callbackEach();
                 }
             }, (err) => {
-                callback(null);
+                callback(err);
+                fut.return(true);
             });
-        })
+        }
     ]);
+
+    return fut.wait();
 };

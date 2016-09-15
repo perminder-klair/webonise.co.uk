@@ -11,7 +11,7 @@ const consumer_key = serviceConfig.consumer_key;
 const access_token = serviceConfig.access_token;
 
 exports.syncPocket = function() {
-    console.log('start sync');
+    console.log('start pocket sync');
     let data;
     let lastItem;
     let since = null;

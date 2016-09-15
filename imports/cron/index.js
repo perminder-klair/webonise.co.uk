@@ -27,7 +27,7 @@ Meteor.methods({
 let job = new CronJob({
     cronTime: '* * * * *',
     onTick: function() {
-        //console.log('You will see this message every minute');
+        console.log('sync is running now (every minute).');
 
         syncSkills();
         syncTimeline();

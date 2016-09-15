@@ -57,11 +57,7 @@ let syncMoves = function () {
 
             //console.log('diet', result);
             //update data
-            console.log('date', result.date);
-
-            console.log(Diet.findOne({date: result.date}));
             if (!_.isUndefined(Diet.findOne({date: result.date}))) {
-                console.log('update');
                 Diet.update({
                     date: result.date
                 }, {
@@ -72,7 +68,6 @@ let syncMoves = function () {
                     }
                 });
             } else {
-                console.log('insert');
                 Diet.insert({
                     km: result.details.km,
                     steps: result.details.steps,
@@ -105,7 +100,7 @@ let syncMoves = function () {
 };
 
 exports.syncJawboneUp = function() {
-    console.log('start sync');
+    console.log('start jawbone up sync');
 
     syncMood();
     syncMoves();

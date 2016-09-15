@@ -15,7 +15,7 @@ const twitterClient = new TwitterApi({
 });
 
 exports.syncTwitter = function() {
-    console.log('start sync');
+    console.log('start twitter sync');
     let data;
     let lastItem;
     let query = {exclude_replies: true, count: 25};

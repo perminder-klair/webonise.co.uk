@@ -10,6 +10,7 @@
     "bcrypt": "^0.8.7",
     "classnames": "^2.2.5",
     "cron": "^1.1.0",
+    "fibers": "^1.0.14",
     "flickrapi": "^0.4.2",
     "instagram-node": "^0.5.8",
     "jawbone-up": "^0.1.2",

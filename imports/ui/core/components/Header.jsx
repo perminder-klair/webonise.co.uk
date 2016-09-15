@@ -4,7 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 class Header extends Component {
     componentDidMount() {
-        console.log('like my site? contact me!');
+        console.log('like my site? contact me! or have a look here https://github.com/perminder-klair/webonise.co.uk ;)');
 
         //init header nav
         $(".button-collapse").sideNav();

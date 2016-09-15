@@ -1,9 +1,40 @@
 # Webonise.co.uk official source code
 
-### Running the app
+Create a simple portfolio website like [http://www.webonise.co.uk](http://www.webonise.co.uk) driven by various APIs to provide data.
+
+Built using `MeteorJs`.
+
+This is very early of public release of this project, I am going to improve docs by time.
+If you have any question or issues in using, feel free to open a issue.
+
+#### Apis used
+
+- Flikr
+- Instagram
+- Facebook
+- Mailgun
+- Github
+- Pocket
+- Twitter
+- Stackable
+- Jawbone Up
+
+## Requirements
+
+- NodeJs
+- MongoDB
+- MeteorJs (on development machine only)
+
+
+## Setup for development
 
 ```bash
-npm install
+meteor npm install
+```
+
+### To run the app
+
+```bash
 npm start
 ```
 
@@ -44,3 +75,50 @@ To lint:
 ```bash
 npm run lint
 ```
+
+## APIs usage
+
+Get API credentials and update file `./deploy/settings.json`
+
+### Flikr
+
+todo write docs
+
+### Instagram
+
+To get instagram access token use: [http://instagram.pixelunion.net/](http://instagram.pixelunion.net/)
+
+### Facebook
+
+todo write docs
+
+### Mailgun
+
+todo write docs
+
+### Kadira
+
+todo write docs
+
+### Github
+
+todo write docs
+
+### Pocket
+
+todo write docs
+
+### Twitter
+
+todo write docs
+
+### Stackable
+
+- Login at [http://www.stackable.space](http://www.stackable.space)
+- Create free account
+- Create stack and note down its stackID
+- Create container and note down its IDs
+
+### Jawbone Up
+
+todo write docs

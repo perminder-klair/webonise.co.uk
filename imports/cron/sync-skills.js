@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import Stackable from 'stackable';
 import async from 'async';
+import Future from 'fibers/future';
 
 import { Skills } from '../api/skills/skills.js';
 
@@ -11,16 +12,17 @@ let stackable = new Stackable(serviceConfig.stack_key);
 exports.syncSkills = function () {
     console.log('start skills sync');
     let data;
+    var fut = new Future();
 
     async.series([
-        Meteor.bindEnvironment((callback) => {
+        (callback) => {
             //get data from stackable
             stackable.getContainerItems(serviceConfig.skills_container, Meteor.bindEnvironment((error, result) => {
                 //console.log(error, result);
                 data = result.data;
                 callback(error);
             }));
-        }),
+        },
         (callback) => {
             //first remove all docs in db
             Skills.remove({});
@@ -36,9 +38,13 @@ exports.syncSkills = function () {
                 });
 
                 callbackEach();
-            }, (err) => {
+            }), (err) => {
+                console.log('skill done');
                 callback(null);
-            });
+                fut.return(true);
+            };
         })
     ]);
+
+    return fut.wait();
 };

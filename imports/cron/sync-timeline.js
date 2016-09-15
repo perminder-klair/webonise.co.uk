@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import async from 'async';
 import Stackable from 'stackable';
 import moment from 'moment';
+import Future from 'fibers/future';
 
 import { Timeline } from '../api/timeline/timeline.js';
 
@@ -9,18 +10,19 @@ const serviceConfig = ServiceConfiguration.configurations.findOne({service: 'sta
 var stackable = new Stackable(serviceConfig.stack_key);
 
 exports.syncTimeline = function() {
-    console.log('start sync');
+    console.log('start timeline sync');
     let data;
+    var fut = new Future();
 
     async.series([
-        Meteor.bindEnvironment((callback) => {
+        (callback) => {
             //get data from stackable
             stackable.getContainerItems(serviceConfig.timeline_container, Meteor.bindEnvironment((error, result) => {
                 //console.log(error, result);
                 data = result.data;
                 callback(error);
             }));
-        }),
+        },
         (callback) => {
             //first remove all docs in db
             Timeline.remove({});
@@ -28,7 +30,7 @@ exports.syncTimeline = function() {
         },
         Meteor.bindEnvironment((callback) => {
             //now insert new
-            async.each(data, (row, callbackEach) => {
+            async.each(data, Meteor.bindEnvironment((row, callbackEach) => {
                 //console.log(row.data);
                 Timeline.insert({
                     title: row.data.title,
@@ -39,9 +41,12 @@ exports.syncTimeline = function() {
                     color: row.data.color
                 });
                 callbackEach();
-            }, (err) => {
+            }), (err) => {
                 callback(null);
+                fut.return(true);
             });
         })
     ]);
+
+    return fut.wait();
 };

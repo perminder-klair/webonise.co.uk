@@ -16,7 +16,7 @@ const flickrOptions = {
 const flickrUserId = serviceConfig.flickr_user_id;
 
 exports.syncFlickr = function() {
-    console.log('start sync');
+    console.log('start flickr sync');
     let data;
     let lastItem;
     let options = {};
@@ -49,7 +49,6 @@ exports.syncFlickr = function() {
                      *require* authentication to run. It just runs with
                      fewer permissions.
                      */
-                    //console.log('flickr result', err, result);
                     data = result.photos.photo;
 
                     callback(err);
@@ -72,7 +71,7 @@ exports.syncFlickr = function() {
                 }
                 callbackEach();
             }, (err) => {
-                callback(null);
+                callback(err);
             });
         })
     ]);

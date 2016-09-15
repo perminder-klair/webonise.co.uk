@@ -44,7 +44,7 @@ let setData = function (data) {
 };
 
 exports.syncInstagram = function() {
-    console.log('start sync');
+    console.log('start instagram sync');
     let data;
     let lastItem;
     let options = {
